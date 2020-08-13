@@ -271,7 +271,7 @@ module.exports = function(webpackEnv) {
       //we placed these paths second because we want `node_modules` to "win"
       //if there are any conflicts. This matches Node resolution mechanism.
       //https://github.com/facebook/create-react-app/issues/253
-      modules: ["node_modules", paths.appNodeModules].concat(modules.additionalModulePaths || []),
+      modules: ["node_modules", paths.appNodeModules, "src"].concat(modules.additionalModulePaths || []),
       //these are the reasonable defaults supported by the Node ecosystem.
       //we also include JSX as a common component filename extension to support
       //some tools, although we do not recommend using it, see:
