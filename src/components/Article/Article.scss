@@ -1,11 +1,10 @@
 .article{
 
   display: flex;
-  flex-basis: 20%;
+  flex-basis: 15rem;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
-  min-width: 15rem;
   min-height: 20rem;
   margin: var(--spacing-4);
   padding: var(--spacing-2);
