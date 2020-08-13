@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import "./Feed.css";
+
+import Article from "components/Article/Article.jsx";
+import "./Feed.scss";
 
 function Feed() {
   const [articles, setArticles] = useState([]);
@@ -30,7 +32,7 @@ function Feed() {
       </div>}
       {articles?.length > 0 && <div className="articles">
         {articles.map((article) => {
-          return <div key={article.id} className="article">{article.id}</div>;
+          return <Article key={article.id} article={article}/>;
         })}
       </div>}
     </main>
