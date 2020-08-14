@@ -24,10 +24,12 @@ function TextInput({
         onChange={(e) => {
           let val = e.target.value;
           onChange(val);
-          clearTimeout(delayedChange);
-          setDelayedChange(setTimeout(() => {
-            onDelayedChange(val);
-          }, 500));
+          if (onDelayedChange){
+            clearTimeout(delayedChange);
+            setDelayedChange(setTimeout(() => {
+              onDelayedChange(val);
+            }, 500));
+          }
         }} placeholder=" "/>
       {label && <span className="label">{label}</span>}
     </label>
@@ -43,7 +45,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-  onDelayedChange: () => {},
+  onDelayedChange: null,
   onChange: () => {},
   label: "",
   value: undefined,
