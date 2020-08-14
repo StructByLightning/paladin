@@ -17,9 +17,10 @@ function Feed() {
   useEffect(() => {
     clearTimeout(searchHandle);
     setSearchHandle(setTimeout(() => {
-      fetch(`https://content.guardianapis.com/search?api-key=462ffdc3-5cc3-4099-9a29-fa39124aa001&q=${search}&page=${page}`)
+      fetch(`https://content.guardianapis.com/search?api-key=462ffdc3-5cc3-4099-9a29-fa39124aa001&q=${search}&page=${page}&show-fields=thumbnail`)
         .then((res) => res.json())
         .then((data) => {
+          console.log(data.response.results);
           setLoading(false);
           setArticles(data.response.results);
         }, (err) => {

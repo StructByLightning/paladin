@@ -7,13 +7,25 @@ function Article({article}) {
   let date = new Date(article.webPublicationDate);
   let dateString = `${date.getMonth()}/${date.getFullYear()}`;
 
-  return (<a href={article.webUrl} key={article.id} className="article">
-    <span className="title">{article.webTitle}</span>
-    <div className="bottom">
-      <span className="section">{article.sectionName}</span>
-      <span className="type">{article.type}</span>
-      <span className="date">{dateString}</span>
+  return (<a
+    href={article.webUrl}
+    key={article.id}
+    className="article"
+  >
+    <div
+      className="background"
+      style={{backgroundImage: `url(${article?.fields?.thumbnail})`}}
+    />
+
+    <div className="content">
+      <span className="title">{article.webTitle}</span>
+      <div className="bottom">
+        <span className="section">{article.sectionName}</span>
+        <span className="type">{article.type}</span>
+        <span className="date">{dateString}</span>
+      </div>
     </div>
+
   </a>
 
   );
