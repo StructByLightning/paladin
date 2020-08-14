@@ -38,10 +38,9 @@ function Feed() {
       }}/>
 
 
-      {loading && <div className="alert">Loading...</div>}
+      {loading && !error && <div className="alert">Loading...</div>}
 
       {error && <div className="alert error">
-        <span>Error:</span>
         <span>{error.toString()}</span>
       </div>}
 
