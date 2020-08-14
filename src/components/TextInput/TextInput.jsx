@@ -46,7 +46,7 @@ TextInput.defaultProps = {
   onDelayedChange: () => {},
   onChange: () => {},
   label: "",
-  value: null,
+  value: undefined,
 };
 
 export default TextInput;
