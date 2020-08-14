@@ -7,21 +7,29 @@ function TextInput({
   onDelayedChange,
   onChange,
   label,
+  value,
 }) {
   const [delayedChange, setDelayedChange] = useState(null);
 
+  let cssClass = "text-input";
+  if (label){
+    cssClass += " labeled";
+  }
 
   return (
-    <label className="text-input">
-      <input type="text" onChange={(e) => {
-        let value = e.target.value;
-        onChange(value);
-        clearTimeout(delayedChange);
-        setDelayedChange(setTimeout(() => {
-          onDelayedChange(value);
-        }, 500));
-      }} placeholder=" "/>
-      <span className="label">{label}</span>
+    <label className={cssClass}>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => {
+          let val = e.target.value;
+          onChange(value);
+          clearTimeout(delayedChange);
+          setDelayedChange(setTimeout(() => {
+            onDelayedChange(val);
+          }, 500));
+        }} placeholder=" "/>
+      {label && <span className="label">{label}</span>}
     </label>
 
   );
@@ -30,11 +38,15 @@ function TextInput({
 TextInput.propTypes = {
   onDelayedChange: PropTypes.func,
   onChange: PropTypes.func,
+  label: PropTypes.string,
+  value: PropTypes.string,
 };
 
 TextInput.defaultProps = {
   onDelayedChange: () => {},
   onChange: () => {},
+  label: "",
+  value: null,
 };
 
 export default TextInput;

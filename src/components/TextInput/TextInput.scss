@@ -5,20 +5,24 @@
   display: flex;
 
 
-  height: 2.5rem;
-  min-height: 2.5rem;
-
+  height: 1.5rem;
+  min-height: 1.5rem;
+  padding: var(--spacing-2) var(--spacing-3);
 
   border: 1px solid var(--gray-8);
 
   transition: filter ease-in-out var(--animation-time-0);
 
+  &.labeled{
+    height: 2.25rem;
+    min-height: 2.25rem;
+  }
 
   .label{
     position: absolute;
 
     top: calc(50% - 0.5em);
-    left: var(--spacing-2);
+    left: var(--spacing-3);
 
     height: 1em;
 
@@ -32,8 +36,9 @@
   input {
     flex-grow: 1;
     align-self: flex-end;
-    height: 1.5em;
-    padding-left: var(--spacing-2);
+    height: 1.5rem;
+
+    padding: 0;
 
     font-size: var(--font-size-2);
 
