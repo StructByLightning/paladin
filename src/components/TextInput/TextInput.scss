@@ -11,6 +11,8 @@
 
   border: 1px solid var(--gray-8);
 
+  transition: filter ease-in-out var(--animation-time-0);
+
 
   .label{
     position: absolute;
@@ -20,11 +22,11 @@
 
     height: 1em;
 
-    font-size: var(--font-size-1);
+    font-size: var(--font-size-2);
 
     line-height: 1em;
 
-    transition: height ease-in-out var(--animation-0);
+    transition: top ease-in-out var(--animation-time-0), font-size ease-in-out var(--animation-time-0);
   }
 
   input {
@@ -58,5 +60,7 @@
 
   input:focus ~ .label, input:not(:placeholder-shown) ~ .label{
     top: var(--spacing-2);
+
+    font-size: var(--font-size-1);
   }
 }

@@ -15,6 +15,8 @@
 
   border: 1px solid var(--gray-8);
 
+  transition: filter ease-in-out var(--animation-time-0);
+
   &:hover{
     box-shadow: var(--elevation-2);
     filter: brightness(125%);
