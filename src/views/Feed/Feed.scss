@@ -1,4 +1,7 @@
 .feed{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   .text-input{
     //margin here creates a blank stripe across the top
     //stripe does not have body bg applied to it
@@ -8,5 +11,19 @@
   .articles{
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .alert{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: var(--font-size-2);
+  }
+
+  .error *{
+    color: red;
   }
 }

@@ -26,6 +26,7 @@ function Feed() {
   }, [search]);
 
 
+
   return (
     <main className="feed">
       <TextInput label="Search" onChange={() => {
@@ -37,8 +38,9 @@ function Feed() {
       }}/>
 
 
-      {loading && <div className="loader">Loading...</div>}
-      {error && <div className="error">
+      {loading && <div className="alert">Loading...</div>}
+
+      {error && <div className="alert error">
         <span>Error:</span>
         <span>{error.toString()}</span>
       </div>}
@@ -53,3 +55,4 @@ function Feed() {
 }
 
 export default Feed;
+
