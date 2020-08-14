@@ -12,12 +12,19 @@ body{
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 
   font-size: var(--font-size-2);
   font-family: var(--primary-font);
 
   background: var(--gray-1);
 }
+
+main{
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
 
 *{
   color: var(--gray-14);
