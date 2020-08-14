@@ -21,7 +21,7 @@ function Feed() {
       }, (err) => {
         setLoading(true);
         setError(err);
-        console.log();
+        console.error();
       });
   }, [search]);
 
