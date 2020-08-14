@@ -23,7 +23,7 @@ function TextInput({
         value={value}
         onChange={(e) => {
           let val = e.target.value;
-          onChange(value);
+          onChange(val);
           clearTimeout(delayedChange);
           setDelayedChange(setTimeout(() => {
             onDelayedChange(val);
