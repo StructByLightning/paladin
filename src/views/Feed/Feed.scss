@@ -1,4 +1,12 @@
-.articles{
-  display: flex;
-  flex-wrap: wrap;
+.feed{
+  .text-input{
+    //margin here creates a blank stripe across the top
+    //stripe does not have body bg applied to it
+    //don't know why
+    margin: var(--spacing-4);
+  }
+  .articles{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
