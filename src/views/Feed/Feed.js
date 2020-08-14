@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Article from "components/Article/Article.jsx";
 import TextInput from "components/TextInput/TextInput.jsx";
+import Paginator from "components/Paginator/Paginator.jsx";
 import "./Feed.scss";
 
 function Feed() {
@@ -10,10 +11,10 @@ function Feed() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    console.log(search);
-    fetch(`https://content.guardianapis.com/search?api-key=462ffdc3-5cc3-4099-9a29-fa39124aa001&q=${search}`)
+    fetch(`https://content.guardianapis.com/search?api-key=462ffdc3-5cc3-4099-9a29-fa39124aa001&q=${search}&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -23,7 +24,7 @@ function Feed() {
         setError(err);
         console.error();
       });
-  }, [search]);
+  }, [search, page]);
 
 
 
@@ -37,6 +38,9 @@ function Feed() {
         setSearch(value);
       }}/>
 
+      <Paginator onChange={(value) => {
+        setPage(value);
+      }} />
 
       {loading && !error && <div className="alert">Loading...</div>}
 
