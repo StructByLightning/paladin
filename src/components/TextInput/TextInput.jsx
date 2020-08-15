@@ -45,7 +45,7 @@ TextInput.propTypes = {
   onDelayedChange: PropTypes.func,
   onChange: PropTypes.func,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   centered: PropTypes.bool,
 };
 

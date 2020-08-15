@@ -25,7 +25,6 @@ function Feed() {
         }, (err) => {
           setLoading(true);
           setError(err);
-          console.error();
         });
     }, 500));
   }, [search, page]);
