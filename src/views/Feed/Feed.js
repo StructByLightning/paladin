@@ -20,7 +20,6 @@ function Feed() {
       fetch(`https://content.guardianapis.com/search?api-key=462ffdc3-5cc3-4099-9a29-fa39124aa001&q=${search}&page=${page}&show-fields=thumbnail`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.response.results);
           setLoading(false);
           setArticles(data.response.results);
         }, (err) => {
@@ -31,22 +30,35 @@ function Feed() {
     }, 500));
   }, [search, page]);
 
+  const reloadSearch = (newSearch, newPage) => {
+    setLoading(true);
+    setArticles([]);
+    if (newSearch !== null){
+      setSearch(newSearch);
+    }
+    setError("");
+    setPage(newPage);
+  };
+
 
   return (
     <main className="feed">
       <TextInput label="Search" onChange={(value) => {
-        setLoading(true);
-        setArticles([]);
-        setSearch(value);
-        setError("");
+        reloadSearch(value, page);
       }}/>
 
-      <Paginator onChange={(value) => {
-        setPage(value);
-        setLoading(true);
-        setArticles([]);
-        setError("");
-      }} />
+      <Paginator
+        value={page}
+        onChange={(value) => {
+          reloadSearch(null, value);
+        }}
+        onIncrement={() => {
+          reloadSearch(null, page + 1);
+        }}
+        onDecrement={() => {
+          reloadSearch(null, page - 1);
+        }}
+      />
 
       {loading && !error && <div className="alert">Loading...</div>}
 
