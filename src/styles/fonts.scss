@@ -1,0 +1,17 @@
+@font-face {
+  font-weight: normal;
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../fonts/Montserrat-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../fonts/Montserrat-Bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: "Barlow Condensed";
+  src: local("Barlow Condensed"), url(../fonts/BarlowCondensed-Light.ttf) format("opentype");
+}
