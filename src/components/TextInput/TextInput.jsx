@@ -8,12 +8,16 @@ function TextInput({
   onChange,
   label,
   value,
+  centered,
 }) {
   const [delayedChange, setDelayedChange] = useState(null);
 
   let cssClass = "text-input";
   if (label){
     cssClass += " labeled";
+  }
+  if (centered){
+    cssClass += " centered";
   }
 
   return (
@@ -42,6 +46,7 @@ TextInput.propTypes = {
   onChange: PropTypes.func,
   label: PropTypes.string,
   value: PropTypes.string,
+  centered: PropTypes.bool,
 };
 
 TextInput.defaultProps = {
@@ -49,6 +54,7 @@ TextInput.defaultProps = {
   onChange: () => {},
   label: "",
   value: undefined,
+  centered: false,
 };
 
 export default TextInput;

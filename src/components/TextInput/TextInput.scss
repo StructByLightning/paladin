@@ -69,4 +69,10 @@
 
     font-size: var(--font-size-1);
   }
+
+  &.centered{
+    input{
+      text-align: center;
+    }
+  }
 }
