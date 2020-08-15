@@ -1,0 +1,29 @@
+.button{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1) var(--spacing-3);
+
+  color: var(--pcolor-7);
+
+  font-size: var(--font-size-2);
+  font-family: var(--primary-font);
+
+  background: transparent;
+  border: 1px solid var(--pcolor-7);
+  outline: none;
+
+  &:hover{
+    color: var(--gray-0);
+
+    background: var(--pcolor-7);
+    box-shadow: var(--elevation-2);
+  }
+
+  &:active{
+    outline: none;
+    box-shadow: none;
+    filter: brightness(80%);
+  }
+}
