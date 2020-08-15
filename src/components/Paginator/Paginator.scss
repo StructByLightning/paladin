@@ -1,3 +1,12 @@
 .paginator{
+  display: flex;
+  justify-content: center;
 
+  .text-input{
+    width: 4rem;
+  }
+
+  *:not(:last-child){
+    margin-right: var(--spacing-3);
+  }
 }
