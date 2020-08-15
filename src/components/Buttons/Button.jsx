@@ -6,8 +6,13 @@ import "./Button.scss";
 function Button({
   label,
   onClick,
+  disabled,
 }) {
-  return (<button className="button" onClick={onClick}>
+  let className = "button";
+  if (disabled){
+    className += " disabled";
+  }
+  return (<button className={className} onClick={onClick}>
     {label}
   </button>
 
@@ -17,10 +22,12 @@ function Button({
 Button.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 Button.defaultProps = {
   label: "",
   onClick: () => {},
+  disabled: false,
 };
 
 export default Button;

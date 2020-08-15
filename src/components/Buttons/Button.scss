@@ -26,4 +26,10 @@
     box-shadow: none;
     filter: brightness(80%);
   }
+
+  &.disabled{
+    filter: grayscale(100%);
+
+    pointer-events: none;
+  }
 }
